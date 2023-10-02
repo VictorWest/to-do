@@ -1,0 +1,27 @@
+<%- include("partials/header.ejs") %>
+
+<%  if(locals.newTask1 && locals.newTask2 && locals.newTask3 && locals.newTask4){%>
+    <h1>Your tasks</h1>
+    <div class="container">
+        <div class="box box-1"><input type="checkbox" name="check"><label for="check">Task: <br><%= newTask1 %></label></div>
+        <div class="box box-2"><input type="checkbox" name="check"><label for="check">Task: <br><%= newTask2 %></label></div>
+        <div class="box box-2"><input type="checkbox" name="check"><label for="check">Task: <br><%= newTask3 %></label></div>
+        <div class="box box-2"><input type="checkbox" name="check"><label for="check">Task: <br><%= newTask4 %></label></div>
+    </div>
+<%  }else{%>
+    <h1>Add new tasks, soldier</h1>
+    <form action="/submit" method="POST">
+        <div class="container">
+            <input type="text" name="new-task1" placeholder="New Task">
+            <input type="text" name="new-task2" placeholder="New Task">
+            <input type="text" name="new-task3" placeholder="New Task">
+            <input type="text" name="new-task4" placeholder="New Task">
+            
+        </div>
+        <input type="submit" value="Add tasks">
+    </form>
+<% } %>
+
+
+
+<%- include ("partials/footer.ejs") %>
